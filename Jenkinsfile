@@ -9,6 +9,7 @@ pipeline {
             }
         }
         stage('Create docker image') {
+            agent any
             steps {
                 sh 'docker build -f Dockerfile.production.dockerfile -t docker-test .'
                 sh 'docker images'
